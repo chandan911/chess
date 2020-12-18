@@ -1,7 +1,7 @@
 package main;
 
-import main.models.BoardPosition;
-import main.models.Input;
+import models.BoardPosition;
+import models.Input;
 
 import java.util.Arrays;
 import java.util.Scanner;
