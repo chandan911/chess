@@ -1,5 +1,7 @@
 package models;
 
+import java.util.Objects;
+
 public class BoardPosition {
   private Row row;
   private int cellNumber;
@@ -25,5 +27,19 @@ public class BoardPosition {
   @Override
   public String toString() {
     return row.toString() + cellNumber;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    BoardPosition that = (BoardPosition) o;
+    return cellNumber == that.cellNumber &&
+        row == that.row;
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(row, cellNumber);
   }
 }
