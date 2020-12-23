@@ -9,6 +9,11 @@ public class BoardPosition {
     this.cellNumber = Character.getNumericValue(position.charAt(1));
   }
 
+  public BoardPosition(Row row, int cellNumber) {
+    this.row = row;
+    this.cellNumber = cellNumber;
+  }
+
   public Row getRow() {
     return row;
   }

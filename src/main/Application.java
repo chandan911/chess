@@ -2,8 +2,9 @@ package main;
 
 import models.BoardPosition;
 import models.Input;
+import service.InputProcessor;
 
-import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Application {
@@ -13,9 +14,9 @@ public class Application {
     System.out.println("Enter piece type and cell position - ");
     String inputString = scanner.nextLine();
     Input input = new Input(inputString);
-    BoardPosition[] possiblePositions = {};
+    List<BoardPosition> possiblePositions = new InputProcessor(input).getPossibleBoardPositionsFrom(input.getBoardPosition());
     System.out.println("Possible  positions for this piece at this position are - ");
-    Arrays.stream(possiblePositions).forEach(x -> System.out.print(x + " "));
+    possiblePositions.forEach(x -> System.out.print(x + " "));
   }
 
 }
